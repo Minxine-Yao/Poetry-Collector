@@ -22,7 +22,6 @@ def catalogParser(filepath):
                     "author": author
                 }
                 title = ""
-                print(poem)
                 poems.append(poem)
 
     return poems
