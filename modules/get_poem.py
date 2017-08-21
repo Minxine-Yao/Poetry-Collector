@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 –*-
+
 from urllib.request import urlopen
 from urllib.error import  HTTPError
 from bs4 import BeautifulSoup
@@ -17,9 +19,9 @@ def getPoem(poem):
             # 找得到这首诗
             link = linkDiv["href"]
             poem_html = urlopen(link)
-            bsObj = BeautifulSoup(poem_html.read(), "html.parser")
-            cotent = bsObj.find("div", class_="contson").get_text()
-            comment = bsObj.find("div", class_="contyishang").findAll('p', text="注释")[1].get_text()
+            bsObj = BeautifulSoup(poem_html.read(), "html.parser", from_encoding="gb18030")
+            content = bsObj.find("div", class_="contson").get_text()
+            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text()
     else:
         # 搜索结果页
         html = urlopen("http://so.gushiwen.org/search.aspx?value="+title)
@@ -30,8 +32,8 @@ def getPoem(poem):
             link = "http://so.gushiwen.org/" + linkDiv.a["href"]
             poem_html = urlopen(link)
             bsObj = BeautifulSoup(poem_html.read(), "html.parser")
-            cotent = bsObj.find("div", class_="contson").p.get_text()
-            comment = bsObj.find("div", class_="contyishang").findAll('p', text="注释")[1].get_text()
+            content = bsObj.find("div", class_="contson").p.get_text()
+            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text()
 
     poemInfo = {
         "title": title,
