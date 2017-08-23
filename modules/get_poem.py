@@ -20,8 +20,8 @@ def getPoem(poem):
             link = linkDiv["href"]
             poem_html = urlopen(link)
             bsObj = BeautifulSoup(poem_html.read(), "html.parser", from_encoding="gb18030")
-            content = bsObj.find("div", class_="contson").get_text()
-            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text()
+            content = bsObj.find("div", class_="contson").get_text("\n", strip=True)
+            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text("\n", strip=True)
     else:
         # 搜索结果页
         html = urlopen("http://so.gushiwen.org/search.aspx?value="+title)
@@ -32,8 +32,8 @@ def getPoem(poem):
             link = "http://so.gushiwen.org/" + linkDiv.a["href"]
             poem_html = urlopen(link)
             bsObj = BeautifulSoup(poem_html.read(), "html.parser")
-            content = bsObj.find("div", class_="contson").p.get_text()
-            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text()
+            content = bsObj.find("div", class_="contson").p.get_text("\n", strip=True)
+            comment = bsObj.findAll("div", class_="contyishang")[1].findAll('p')[-1].get_text("\n", strip=True)
 
     poemInfo = {
         "title": title,
