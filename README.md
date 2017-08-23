@@ -6,6 +6,8 @@ An application that collect old Chinese poems into a Markdown file with the inpu
 
 ## The Structure of Catalog
 
+Catalog is a txt file with the coding format ANSI, the structure of it was described below.
+
 > [ Anything without '…' ]
 >
 > **Author**
