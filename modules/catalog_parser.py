@@ -1,5 +1,5 @@
 def catalogParser(filepath):
-    poems = []
+    catalog = []
 
     author = ""
     title = ""
@@ -22,6 +22,6 @@ def catalogParser(filepath):
                     "author": author
                 }
                 title = ""
-                poems.append(poem)
+                catalog.append(poem)
 
-    return poems
+    return catalog
