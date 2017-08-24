@@ -1,2 +1,5 @@
 .idea
 modules/__pycache__
+test.py
+tempcatalog.html
+poetry.md
