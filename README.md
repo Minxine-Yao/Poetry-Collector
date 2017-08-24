@@ -2,7 +2,9 @@
 
 ## Introduction
 
-An application that collect old Chinese poems into a Markdown file with the input of catalog file .
+An application that collect old Chinese poems into a Markdown file with the input of catalog file,all the poems are scraped from the [古诗文网](http://www.gushiwen.org/).For some unknown reasons, the comments of some poems cannot be scraped normally, which I know currently is listed below:
+
+* 《山居秋暝》王维
 
 ## The Structure of Catalog
 
