@@ -6,6 +6,12 @@ An application that collect old Chinese poems into a Markdown file with the inpu
 
 * 《山居秋暝》王维
 
+## How to use
+
+```
+py poetry_collector.py catalog_filepath
+```
+
 ## The Structure of Catalog
 
 Catalog is a txt file with the coding format ANSI, the structure of it was described below.

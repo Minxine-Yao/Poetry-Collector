@@ -1,8 +1,10 @@
+import sys
+
 from modules.catalog_parser import catalogParser
 from modules.get_poem import getPoem
 
 def main():
-    filepath = "catalog.txt"
+    filepath = sys.argv[1]
     catalog = catalogParser(filepath)
     poetryPath = "poetry.md"
     with open(poetryPath, 'w', encoding="utf8") as f:
